@@ -25,6 +25,7 @@ namespace gyak7
            
             button1.Text = Resource1.Add; // button1
             button2.Text = Resource1.write;
+            button3.Text = Resource1.delete;
 
 
             // listbox1
@@ -63,6 +64,18 @@ namespace gyak7
                 sw.Close();
 
             }
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            var törlendő = (from x in users
+                            where x.ID == (Guid)listUsers.SelectedValue
+                            select x).FirstOrDefault();
+            users.Remove(törlendő);
+            
+            listUsers.DataSource = users;
+
 
         }
     }
