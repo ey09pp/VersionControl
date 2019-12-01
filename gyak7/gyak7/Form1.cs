@@ -20,8 +20,8 @@ namespace gyak7
         {
             InitializeComponent();
 
-            label1.Text = Resource1.LastName; // label1
-            label2.Text = Resource1.FirstName; // label2
+            label1.Text = Resource1.FullName; // label1
+           
             button1.Text = Resource1.Add; // button1
 
             // listbox1
@@ -34,8 +34,8 @@ namespace gyak7
         {
             var u = new User()
             {
-                LastName = label1.Text,
-                FirstName = label2.Text
+                FullName = label1.Text,
+                
             };
             users.Add(u);
         }
